@@ -38,9 +38,10 @@ a.size:hover{
     transition: ease-in 0.25s;
 }
 .karisma2{
-    width: 480px;
-    position: absolute;
+    width: 400px;
     animation: karisma2 3s ease-in-out infinite;
+    border-radius: 20px;
+
 
 }
 @keyframes karisma2 {
@@ -141,8 +142,8 @@ a.size:hover{
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 700px) {
 img.karisma2 {
-width: 400px;
+width: 300px;
 }
 }
