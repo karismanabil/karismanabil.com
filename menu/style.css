@@ -1,0 +1,149 @@
+.primarycolor{
+    background-color: #0A1F32;
+    color: white;
+}
+.secondarycolor{
+    background-color: white;
+    color:#333;
+}
+.tertarycolor{
+    background-color: #FF4C2B;
+    color: white;
+}
+.text-tertarycolor{
+    color:#FF4C2B;
+    text-decoration: none;
+}
+.text-tertarycolor:hover{
+    color:#fff;
+}
+img.karisma{
+    background-color: #FF4C2B;
+    width: 150px;
+}
+.logo{
+    
+    height: 80px;
+}
+a{
+    text-decoration: none;
+}
+.size{
+    width: 100px;
+    height: 100px;
+}
+a.size:hover{
+    background-color: #eee;
+    color:#FF4C2B ;
+    transition: ease-in 0.25s;
+}
+.karisma2{
+    width: 400px;
+    animation: karisma2 3s ease-in-out infinite;
+    border-radius: 20px;
+
+
+}
+@keyframes karisma2 {
+    0%,100%{
+        top: 10px;
+    }
+    50%{
+        top:0px;
+    }
+
+}
+
+.hoverlink:hover{
+    background-color: #FF4C2B;
+    transition: ease-in 0.25s;
+}
+
+
+
+/* index2 */
+.headlines{
+    font-size: xx-large;
+    text-align: center;
+}
+.scroll{
+    position: relative;
+    color: #ffffff89;
+}
+
+.scroll:hover{
+    color:#ffffff;
+    font-size: large;
+    transition: 0.75s ease-in-out ;
+}
+
+.line {
+    border: 1;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.744);
+}
+.tag {
+    position: absolute;
+    font-size: x-small;
+    top: 0;
+    right: 0;
+    color: #ffffff;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-bottom-left-radius: 10px;
+}
+
+.tothetop{
+    background-color: rgba(0, 0, 0, 0.25) ;
+    position: absolute;
+    font-size:x-small;
+    padding: 5px;
+    border-radius: 8px;
+    bottom: 10px;
+    right:10px;
+    color: rgba(255, 255, 255, 0.507);
+    margin: 5px;
+}
+.tothetop:hover{
+    color: #ffffff;
+    transition: 0.5s ease-in-out ;
+    font-size: smaller;
+}
+.cardmove{
+    position: absolute;
+}
+
+
+.cardmove:hover{
+    animation: cardmove 3s infinite;
+}
+
+@keyframes cardmove {
+    0%,100%{
+        bottom: 0px;
+    }
+    50%{
+        bottom:10px;
+    }
+
+}
+
+.kursor{
+    animation: kursor 2.5s infinite;
+}
+
+@keyframes kursor {
+    0%,50%,99%{
+        color: rgba(255, 255, 255, 0);
+    }
+    1%,40%,60%,90%{
+        color: rgb(255, 255, 255);
+
+    }
+}
+
+@media (max-width: 700px) {
+img.karisma2 {
+width: 300px;
+}
+}
