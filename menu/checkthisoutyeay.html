@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<style>
+  :root {
+        --dark: #212121;
+    }
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  li {
+
+    font-family: 'Poppins', sans-serif;
+  }
+
+  button {
+    position: absolute;
+  }
+
+
+  .cardmove {
+    position: absolute;
+    height: 100%;
+    width: 300px;
+    animation: cardmove ease-in 3s infinite;
+
+  }
+
+  @keyframes cardmove {
+
+    0%,
+    100% {
+      top: 0px;
+    }
+
+    50% {
+      top: 10px;
+    }
+
+  }
+
+  .wrapper {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -9999;
+    position: absolute;
+    background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+    background-size: 1800% 1800%;
+
+    -webkit-animation: rainbow 18s ease infinite;
+    -z-animation: rainbow 18s ease infinite;
+    -o-animation: rainbow 18s ease infinite;
+    animation: rainbow 18s ease infinite;
+  }
+
+  @-webkit-keyframes rainbow {
+    0% {
+      background-position: 0% 82%
+    }
+
+    50% {
+      background-position: 100% 19%
+    }
+
+    100% {
+      background-position: 0% 82%
+    }
+  }
+
+  @-moz-keyframes rainbow {
+    0% {
+      background-position: 0% 82%
+    }
+
+    50% {
+      background-position: 100% 19%
+    }
+
+    100% {
+      background-position: 0% 82%
+    }
+  }
+
+  @-o-keyframes rainbow {
+    0% {
+      background-position: 0% 82%
+    }
+
+    50% {
+      background-position: 100% 19%
+    }
+
+    100% {
+      background-position: 0% 82%
+    }
+  }
+
+  @keyframes rainbow {
+    0% {
+      background-position: 0% 82%
+    }
+
+    50% {
+      background-position: 100% 19%
+    }
+
+    100% {
+      background-position: 0% 82%
+    }
+  }
+  .transition-1 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 101;
+        background-color: var(--dark);
+        opacity: 0;
+        pointer-events: none;
+        transition: 5s ease-in-out;
+    }
+
+    .transition-1.is-active {
+        pointer-events: all;
+        opacity: 1;
+    }
+
+    .transition-2 {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        bottom: 0;
+        z-index: 101;
+        background-color: var(--dark);
+        transition: 0.5s ease-out;
+    }
+
+    .transition-2.is-active {
+        left: 0px;
+    }
+
+    .transition-3 {
+        position: fixed;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 101;
+        background-color: var(--dark);
+        transition: 0.5s ease-out;
+    }
+
+    .transition-3.is-active {
+        top: 0;
+    }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<head>
+  <div class="wrapper"></div>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+
+<body >
+  <div class="transition transition-1 is-active"></div>
+
+  <div class="m-3 p-3 d-flex justify-content-center align-items-center flex-column">
+    <h1 class="text-center mb-3 text-bg-light p-2 rounded-3">Congratulations!!! 🥳🎉🎉🎉</h1>
+    <h4 class="text-center mb-5 text-bg-light p-2 rounded-3">You accept my invitation🤗</h4>
+    <div class="row">
+      <div class="col">
+        <div class="text-center d-flex">
+          <img src="img/partycat.gif" class="w-50 rounded-start">
+          <img src="img/catdance.gif" class="w-50 rounded-end">
+        </div>
+      </div>
+      <div class="col">
+        <div class="border border-1 bg-white">
+          <p class="m-2 ">Catat baik-baik tanggal, waktu dan tempatnya yaah!!</p>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">📅 : 19 November 2022 </li>
+            <li class="list-group-item">⌚ : 18.30 WITU</li>
+            <li class="list-group-item">📍 : Tempat Belum tau!</li>
+          </ul>
+          <button class="mt-3  fw-bold btn btn-success">Ajukan Reschedule / Tentuin Tempat</button>
+        </div>
+      </div>
+      <div class="col">
+        <div class="text-center d-flex ">
+          <img src="img/catdance2.gif" class="w-50 rounded-start">
+          <img src="img/catdance3.gif" class="w-50 rounded-end">
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- button text to WA -->
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+    <audio id="audio"  loop  autoplay>
+      <source src="song/videoplayback.m4a" type="audio/ogg">
+    </audio>
+    <script>var vid = document.getElementById("audio");
+      vid.volume = 0.2;</script>
+</body>
+
+</html>
