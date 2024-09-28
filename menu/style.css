@@ -1,33 +1,43 @@
 
+*{
+    font-family: 'Poppins';
 
-p{
+}
+/* p{
     font-family: 'Open Sans', sans-serif;
 }
 h1,h2,h3,h4,h5,h6{
     font-family: 'Playfair Display', serif;
-}
+} */
 
 .primarycolor{
-    background-color: #0A1F32;
-    color: white;
+    background-color: #f0f0f0;
+    color: #222222;
 }
+.navbarku{
+    background: linear-gradient(0.25turn, #517CE7, #749CF3);
+
+    color: #fff;
+}
+
 .secondarycolor{
     background-color: white;
     color:#333;
 }
 .tertarycolor{
-    background-color: #FF4C2B;
+    background-color: #517CE7;
     color: white;
 }
 .text-tertarycolor{
-    color:#FF4C2B;
+    color:#517CE7;
     text-decoration: none;
 }
 .text-tertarycolor:hover{
     color:#fff;
 }
 img.karisma{
-    background-color: #FF4C2B;
+    background: linear-gradient(0.25turn, #517CE7, #749CF3);
+
     width: 150px;
 }
 .logo{
@@ -43,7 +53,7 @@ a{
 }
 a.size:hover{
     background-color: #eee;
-    color:#FF4C2B ;
+    color:#517CE7 ;
     transition: ease-in 0.25s;
 }
 .karisma2{
@@ -63,8 +73,12 @@ a.size:hover{
 
 }
 
+.hoverlink{
+    background-color: #749CF3;
+}
+
 .hoverlink:hover{
-    background-color: #FF4C2B;
+    background-color: #517CE7;
     transition: ease-in 0.25s;
 }
 
@@ -77,11 +91,11 @@ a.size:hover{
 }
 .scroll{
     position: relative;
-    color: #ffffff89;
+    color: #749CF3;
 }
 
 .scroll:hover{
-    color:#ffffff;
+    color:#517CE7;
     font-size: large;
     transition: 0.75s ease-in-out ;
 }
@@ -89,7 +103,7 @@ a.size:hover{
 .line {
     border: 1;
     height: 1px;
-    background-color: rgba(255, 255, 255, 0.744);
+    background-color: rgba(0, 0, 0, 0.744);
 }
 .tag {
     position: absolute;
@@ -103,11 +117,11 @@ a.size:hover{
 }
 
 .tothetop{
-    background-color: rgba(0, 0, 0, 0.25) ;
+    background: linear-gradient(0.25turn, #517CE7, #749CF3);
     position: absolute;
     font-size:x-small;
-    padding: 5px;
-    border-radius: 8px;
+    padding: 8px 12px 8px 12px;
+    border-radius: 4px;
     bottom: 10px;
     right:10px;
     color: rgba(255, 255, 255, 0.507);
@@ -115,6 +129,7 @@ a.size:hover{
 }
 .tothetop:hover{
     color: #ffffff;
+    background: linear-gradient(0.25turn, #517CE7, #749CF3);
     transition: 0.5s ease-in-out ;
     font-size: smaller;
 }
@@ -122,7 +137,15 @@ a.size:hover{
     position: absolute;
 }
 
-
+.roundedcard{
+    border-radius: 20px;
+}
+.roundedcardleft{
+    border-radius: 20px 0px 0px 20px;
+}
+.roundedcardright{
+    border-radius: 0px 20px 20px 0px;
+}
 .cardmove:hover{
     animation: cardmove 3s infinite;
 }
@@ -146,7 +169,7 @@ a.size:hover{
         color: rgba(255, 255, 255, 0);
     }
     1%,40%,60%,90%{
-        color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
 
     }
 }
