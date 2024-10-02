@@ -59,97 +59,97 @@ body {
 
 .background-image-slider img {
   position: absolute;
-  width: 100px;
+  width: 500px;
   object-fit: cover; /* Agar gambar sesuai dengan ukuran container */
 
 }
 
 .background-image-slider img:nth-child(1) {
-  animation: slide 24s linear infinite; /* Animasi gambar berjalan vertikal */
+  animation: slide 5s linear infinite; /* Animasi gambar berjalan vertikal */
 
 }
 .background-image-slider img:nth-child(2) {
-  animation: slide 34s linear infinite; /* Animasi gambar berjalan vertikal */
+  animation: slide 4s linear infinite; /* Animasi gambar berjalan vertikal */
 
 }
 .background-image-slider img:nth-child(3) {
-  animation: slide 25s linear infinite; /* Animasi gambar berjalan vertikal */
+  animation: slide 5s linear infinite; /* Animasi gambar berjalan vertikal */
 
 }
 .background-image-slider img:nth-child(4) {
-  animation: slide 24s linear infinite; /* Animasi gambar berjalan vertikal */
+  animation: slide 2s linear infinite; /* Animasi gambar berjalan vertikal */
 
 }
 .background-image-slider img:nth-child(5) {
-  animation: slide 30s linear infinite; /* Animasi gambar berjalan vertikal */
+  animation: slide 5s linear infinite; /* Animasi gambar berjalan vertikal */
 
 }
 .background-image-slider img:nth-child(6) {
-  animation: slide 30s linear infinite; /* Animasi gambar berjalan vertikal */
+  animation: slide 3s linear infinite; /* Animasi gambar berjalan vertikal */
 
 }
 .background-image-slider img:nth-child(7) {
-  animation: slide 40s linear infinite; /* Animasi gambar berjalan vertikal */
+  animation: slide 2s linear infinite; /* Animasi gambar berjalan vertikal */
 
 }
 .background-image-slider img:nth-child(8) {
-  animation: slide 34s linear infinite; /* Animasi gambar berjalan vertikal */
+  animation: slide 5s linear infinite; /* Animasi gambar berjalan vertikal */
 
 }
 .background-image-slider img:nth-child(9) {
-  animation: slide 24s linear infinite; /* Animasi gambar berjalan vertikal */
+  animation: slide 6s linear infinite; /* Animasi gambar berjalan vertikal */
 
 }
 .background-image-slider img:nth-child(10) {
-  animation: slide 28s linear infinite; /* Animasi gambar berjalan vertikal */
+  animation: slide 7s linear infinite; /* Animasi gambar berjalan vertikal */
 
 }
 .background-image-slider img:nth-child(11) {
-  animation: slide 38s linear infinite; /* Animasi gambar berjalan vertikal */
+  animation: slide 2s linear infinite; /* Animasi gambar berjalan vertikal */
 
 }
 .background-image-slider img:nth-child(12) {
-  animation: slide 44s linear infinite; /* Animasi gambar berjalan vertikal */
+  animation: slide 5s linear infinite; /* Animasi gambar berjalan vertikal */
 
 }
 .background-image-slider img:nth-child(13) {
-  animation: slide 24s linear infinite; /* Animasi gambar berjalan vertikal */
+  animation: slide 3s linear infinite; /* Animasi gambar berjalan vertikal */
 
 }
 .background-image-slider img:nth-child(14) {
-  animation: slide 25s linear infinite; /* Animasi gambar berjalan vertikal */
+  animation: slide 4s linear infinite; /* Animasi gambar berjalan vertikal */
 
 }
 .background-image-slider img:nth-child(15) {
-  animation: slide 34s linear infinite; /* Animasi gambar berjalan vertikal */
+  animation: slide 5s linear infinite; /* Animasi gambar berjalan vertikal */
 
 }
 .background-image-slider img:nth-child(16) {
-  animation: slide 24s linear infinite; /* Animasi gambar berjalan vertikal */
+  animation: slide 6s linear infinite; /* Animasi gambar berjalan vertikal */
 
 }
 .background-image-slider img:nth-child(17) {
-  animation: slide 35s linear infinite; /* Animasi gambar berjalan vertikal */
+  animation: slide 5s linear infinite; /* Animasi gambar berjalan vertikal */
 
 }
 .background-image-slider img:nth-child(18) {
  
-  animation: slide 24s linear infinite; /* Animasi gambar berjalan vertikal */
+  animation: slide 7s linear infinite; /* Animasi gambar berjalan vertikal */
 
 }
 .background-image-slider img:nth-child(19) {
  
-  animation: slide 24s linear infinite; /* Animasi gambar berjalan vertikal */
+  animation: slide 8s linear infinite; /* Animasi gambar berjalan vertikal */
 
 }
 .background-image-slider img:nth-child(20) {
   
-  animation: slide 45s linear infinite; /* Animasi gambar berjalan vertikal */
+  animation: slide 3s linear infinite; /* Animasi gambar berjalan vertikal */
 
 }
 .background-image-slider img:nth-child(21) {
  
-  animation: slide 52s linear infinite; /* Animasi gambar berjalan vertikal */
+  animation: slide 4s linear infinite; /* Animasi gambar berjalan vertikal */
 
 }
 
@@ -157,8 +157,9 @@ body {
 /* Animasi sliding */
 @keyframes slide {
   0% {
-    transform:  translateY(0%) ;
+    transform:  translateY(-100%) ;
     opacity: 0;
+
   }
   
   2%{
@@ -168,7 +169,7 @@ body {
     opacity: 1;
   }
   100% {
-    transform:  translateY(1000%) ;
+    transform:  translateY(200%) ;
     opacity: 0;
   }
 }
@@ -176,8 +177,26 @@ body {
 
 
 /* Style untuk zoom in and zoom out background */
-.zoom-bg {
-  background-image: url('../gif/bgnadia.gif'); /* Ganti dengan path gambar */
+.zoom-bgakhir {
+  background-image: url('../gif/bgnadia2.gif'); /* Ganti dengan path gambar */
+  background-size: 100%; /* Ukuran awal gambar */
+  background-repeat: repeat;
+  background-position: center;
+  animation: zooming 4s infinite alternate;
+}
+
+@keyframes zooming {
+  0% {
+    background-size: 1000px;
+  }
+  
+  100% {
+    background-size: 800px; /* Ukuran gambar saat diperbesar */
+  }
+}
+
+.zoom-bgawal {
+  background-image: url('../img/bgnormal.jpg'); /* Ganti dengan path gambar */
   background-size: 100%; /* Ukuran awal gambar */
   background-repeat: repeat;
   background-position: center;
@@ -186,7 +205,7 @@ body {
 
 @keyframes zoomEffect {
   0% {
-    background-size: 1000px;
+    background-size: 750px;
   }
   
   100% {
@@ -305,28 +324,22 @@ img {
   font-weight: 600;
 }
 
+
+
 /* Swiper class */
 .swiper-button-prev:after,
 .swiper-button-next:after {
   content: none;
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-  width: initial;
-  /* height: initial; */
-  /* font-size: 3rem; */
-  color: var(--second-color);
-  /* display: none; */
-  /* display: inline-block; */
 
-}
 
 .swiper-button-prev {
   left: 0;
 }
 
 .swiper-button-next {
+  width: initial;
   margin: 5px 0;
   display: inline-block;
   background-color: var(--first-color);
@@ -335,6 +348,16 @@ img {
   color: var(--dark-color);
   font-weight: 600;
   position: relative;
+}
+
+.swiper-button-next:hover {
+  transform: scale(1.2);
+  transition: 0.15s ease-in-out ;
+}
+.swiper-button-next:active {
+  transform: scale(0.75);
+  background-color: #b9c9a9;
+  transition: 0.15s ease-in-out ;
 }
 
 .swiper-pagination-bullet {
@@ -361,7 +384,20 @@ img {
   position: relative;
   margin-top: 1rem;
 }
+.lanjut-btn:hover {
+  transform: scale(1.2);
+  transition: 0.15s ease-in-out ;
+}
+.lanjut-btn:focus {
+  transform: scale(0.75);
+  background-color: #b9c9a9;
+  transition: 0.15s ease-in-out ;
+}
 
+#gamauBtn {
+  position: relative;
+  transition: top 0.5s ease-in-out, left 0.5s ease-in-out; /* Menambah transisi pada perubahan posisi */
+}
 
 
 
@@ -483,6 +519,11 @@ img {
 .audio-control button:hover {
   background-color: #ff1493;
 }
+
+
+
+
+/* target kado */
 
 
 

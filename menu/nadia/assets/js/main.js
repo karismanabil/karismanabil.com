@@ -34,18 +34,22 @@ document.addEventListener("DOMContentLoaded", function () {
    const modalContent = document.querySelector('.modal-content'); // Get the modal content container
 
    const moveButtonWithinModal = () => {
-      const randomPosition = (min, max) => Math.random() * (max - min) + min;
+      // const randomPosition = (min, max) => Math.random() * (max - min) + min;
 
-      const modalHeight = modalContent.offsetHeight;
-      const modalWidth = modalContent.offsetWidth;
-      
-      // Ensure the button moves within the modal's dimensions
-      const newTop = randomPosition(0, modalHeight - gamauBtn.offsetHeight);  // Height of modal minus button height
-      const newLeft = randomPosition(0, modalWidth - gamauBtn.offsetWidth);   // Width of modal minus button width
+      const modalRect = modalContent.getBoundingClientRect(); // Dimensi modal
+      const btnRect = gamauBtn.getBoundingClientRect(); // Dimensi tombol
+
+      // Hitung posisi acak untuk top dan left agar tidak keluar dari modal
+      const maxTop = modalRect.height - btnRect.height;  // Modal height minus button height
+      const maxLeft = modalRect.width - btnRect.width;   // Modal width minus button width
+
+      const newTop = Math.max(0, Math.random() * maxTop);        // Tidak lebih rendah dari 0
+      const newLeft = Math.max(0, Math.random() * maxLeft);      // Tidak lebih rendah dari 0
 
       // Apply the new top and left positions within modal
       gamauBtn.style.position = 'absolute'; // Ensure button is positioned absolutely within modal
-      gamauBtn.style.top = `${newTop}px`;
+      gamauBtn.style.transition = 'top 500ms ease, left 500ms ease'; // Menambahkan transisi CSS
+      gamauBtn.style.top =  `${newTop}px`;
       gamauBtn.style.left = `${newLeft}px`;
    };
 
@@ -68,6 +72,9 @@ document.addEventListener('DOMContentLoaded', function() {
    const cardSlideSection = document.getElementById('cardslide');
    const bgimage = document.getElementById('bgimageanimation');
    const audioControlsection = document.getElementById('audioControl');
+   const audio = document.getElementById('myAudio'); // Ambil elemen audio
+   const bodyElement = document.querySelector('body');
+
 
  
    // Pastikan tombol di modal kedua ada
@@ -80,7 +87,14 @@ document.addEventListener('DOMContentLoaded', function() {
        lastCardSection.style.display = 'block';
        bgimage.style.display = 'block';
        audioControlsection.style.display = 'block';
- 
+
+       audio.play(); // Memutar audio
+
+       if (bodyElement.classList.contains('zoom-bgawal')) {
+        bodyElement.classList.remove('zoom-bgawal');
+        bodyElement.classList.add('zoom-bgakhir');
+    }
+
        // Tutup modal (jika diinginkan)
        const modalInstance = bootstrap.Modal.getInstance(document.getElementById('exampleModalToggle2'));
        modalInstance.hide();
@@ -335,33 +349,7 @@ function typeWriterEffect(element, text, delay = 100) {
 
 // ============================ AUDIO
 
-document.addEventListener('DOMContentLoaded', function() {
-  const lanjutBtnInModal2 = document.querySelector('#exampleModalToggle2 .lanjut-btn');
-  const lastCardSection = document.getElementById('lastcard');
-  const cardSlideSection = document.getElementById('cardslide');
-  const bgimage = document.getElementById('bgimageanimation');
-  const audio = document.getElementById('myAudio'); // Ambil elemen audio
 
-  if (lanjutBtnInModal2) {
-    lanjutBtnInModal2.addEventListener('click', function() {
-      // Sembunyikan cardslide
-      cardSlideSection.style.display = 'none';
-      
-      // Tampilkan lastcard
-      lastCardSection.style.display = 'block';
-
-      // Tampilkan bgimage
-      bgimage.style.display = 'block';
-
-      // Putar audio
-      audio.play(); // Memutar audio
-
-      // Tutup modal (jika diinginkan)
-      const modalInstance = bootstrap.Modal.getInstance(document.getElementById('exampleModalToggle2'));
-      modalInstance.hide();
-    });
-  }
-});
 
 
 
@@ -390,3 +378,5 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+
