@@ -215,6 +215,7 @@ body {
 
 
 
+
 #lastcard{
   display: none; /* Hidden by default */
   opacity: 0;
@@ -245,6 +246,9 @@ img {
 }
 
 /*=============== CARD ===============*/
+
+#cardslide{display: none;}
+
 .container {
   display: flex;
   justify-content: center;
@@ -436,7 +440,39 @@ img {
   }
 }
 
+/* love button awalan */
 
+#awalan .card__data{
+  background-color: #ffffe4;
+
+}
+#awalan .card__image{
+  background-color: #ffffe4;
+
+}
+#awalan .card__article {
+  width: 400px; /* Remove after adding swiper js */
+  border: 2px solid #ecdd00;
+
+}
+
+.btnMulai{
+  background: #fff;
+  border: solid 1px #cfcfcf;
+  padding: 5px;
+  font-size: 24px;
+  border-radius: 1000px;
+  
+}
+.btnMulai:hover{
+  background: #ff0000;
+  transition: 1s ease-in;
+}
+.btnMulai:focus{
+  transform: scale(1.2);
+  transition: 0.15s ease-in;
+
+}
 
 /* LOVE BUTTON */
 
@@ -520,10 +556,80 @@ img {
   background-color: #ff1493;
 }
 
+.audio-control2 {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: #f1f1f1;
+  border-radius: 50px;
+  padding: 10px 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
 
+.audio-control2 button {
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.audio-control2 button:hover {
+  background-color: #ff1493;
+}
 
 
 /* target kado */
+
+
+/* Loading screen styling */
+#loadingScreen {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Fade-out dissolve effect */
+.fade-out-dissolve {
+  animation: fadeOutDissolve 1.5s forwards; /* Transisi dissolve lebih halus */
+}
+
+@keyframes fadeOutDissolve {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Fade-in dissolve effect */
+.fade-in-dissolve {
+  opacity: 0;
+  animation: fadeInDissolve 1.5s forwards; /* Efek dissolve saat elemen muncul */
+}
+
+@keyframes fadeInDissolve {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
 
 

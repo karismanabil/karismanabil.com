@@ -60,7 +60,51 @@ document.addEventListener("DOMContentLoaded", function () {
       // Move on click
       gamauBtn.addEventListener('click', moveButtonWithinModal);
    }
+   
 });
+
+
+
+// AWALAN
+document.addEventListener('DOMContentLoaded', function() {
+  const btnMulai = document.querySelector('.btnMulai');
+  const awalan = document.getElementById('awalan');
+  const cardSlideSection = document.getElementById('cardslide');
+  const bodyElement = document.querySelector('body');
+  const loadingScreen = document.getElementById('loadingScreen'); // Ambil elemen loading screen
+  const audioControlsection = document.getElementById('audioControl2');
+
+
+  if (btnMulai) {
+     btnMulai.addEventListener('click', function() {
+        // Tampilkan loading screen dan transisi putih
+        loadingScreen.style.display = 'flex';  // Tampilkan loading screen
+        
+        // Tambahkan class untuk efek dissolve di awalan
+        awalan.classList.add('fade-out-dissolve');
+
+        // Tambahkan delay pada transisi ke cardslide untuk sinkron dengan animasi
+        setTimeout(function() {
+           // Sembunyikan awalan setelah 1.5 detik
+           awalan.style.display = 'none';
+
+           // Setelah awalan hilang, tampilkan cardslide dengan efek dissolve
+           setTimeout(function() {
+              loadingScreen.style.display = 'none'; // Sembunyikan loading screen
+              cardSlideSection.style.display = 'flex';  // Tampilkan section cardslide
+              
+              // Tambahkan class untuk fade-in dissolve di cardSlideSection
+              cardSlideSection.classList.add('fade-in-dissolve');
+              
+              audioControlsection.style.display = 'block';
+              
+              bodyElement.classList.add('zoom-bgawal'); // Tambahkan class zoom-bgawal untuk perubahan background
+           }, 2000); // Tambahkan delay 1 detik sebelum tampilkan cardslide
+        }, 2000); // Waktu tunggu sebelum menghilangkan awalan (1.5 detik)
+     });
+  }
+});
+
 
 // if else card hidden
 document.addEventListener('DOMContentLoaded', function() {
@@ -72,7 +116,8 @@ document.addEventListener('DOMContentLoaded', function() {
    const cardSlideSection = document.getElementById('cardslide');
    const bgimage = document.getElementById('bgimageanimation');
    const audioControlsection = document.getElementById('audioControl');
-   const audio = document.getElementById('myAudio'); // Ambil elemen audio
+   const audioControl2section = document.getElementById('audioControl2');
+   const audio2 = document.getElementById('myAudio'); // Ambil elemen audio
    const bodyElement = document.querySelector('body');
 
 
@@ -84,16 +129,16 @@ document.addEventListener('DOMContentLoaded', function() {
        cardSlideSection.style.display = 'none';
        
        // Tampilkan lastcard
-       lastCardSection.style.display = 'block';
+       lastCardSection.style.display = 'flex';
        bgimage.style.display = 'block';
+       audioControl2section.style.display = 'none';
        audioControlsection.style.display = 'block';
 
-       audio.play(); // Memutar audio
 
        if (bodyElement.classList.contains('zoom-bgawal')) {
         bodyElement.classList.remove('zoom-bgawal');
         bodyElement.classList.add('zoom-bgakhir');
-    }
+        }
 
        // Tutup modal (jika diinginkan)
        const modalInstance = bootstrap.Modal.getInstance(document.getElementById('exampleModalToggle2'));
@@ -357,6 +402,9 @@ function typeWriterEffect(element, text, delay = 100) {
 document.addEventListener('DOMContentLoaded', function () {
   const audio = document.getElementById('myAudio');
   const playPauseBtn = document.getElementById('playPauseBtn');
+
+  const audio2 = document.getElementById('myAudio2');
+
   
   // Mengontrol tombol play/pause
   playPauseBtn.addEventListener('click', function () {
@@ -368,15 +416,42 @@ document.addEventListener('DOMContentLoaded', function () {
       playPauseBtn.textContent = '▷'; // Ubah teks tombol jadi "Play"
     }
   });
-  
   // Mulai audio saat tombol lanjut-btn di klik
   const lanjutBtnInModal2 = document.querySelector('#exampleModalToggle2 .lanjut-btn');
   if (lanjutBtnInModal2) {
     lanjutBtnInModal2.addEventListener('click', function () {
+      audio2.pause(); // Memulai lagu saat lanjut-btn diklik
       audio.play(); // Memulai lagu saat lanjut-btn diklik
       playPauseBtn.textContent = '❚❚'; // Ubah teks tombol jadi "Pause"
     });
   }
+
 });
 
 
+
+// CONTROL LAGU
+document.addEventListener('DOMContentLoaded', function () {
+  const audio = document.getElementById('myAudio2');
+  const playPauseBtn2 = document.getElementById('playPauseBtn2');
+  
+  // Mengontrol tombol play/pause
+  playPauseBtn2.addEventListener('click', function () {
+    if (audio.paused) {
+      audio.play(); // Memulai lagu
+      playPauseBtn2.textContent = '❚❚'; // Ubah teks tombol jadi "Pause"
+    } else {
+      audio.pause(); // Menjeda lagu
+      playPauseBtn2.textContent = '▷'; // Ubah teks tombol jadi "Play"
+    }
+  });
+  
+  // Mulai audio saat tombol lanjut-btn di klik
+  const mulaibtn = document.querySelector('.btnMulai');
+  if (mulaibtn) {
+    mulaibtn.addEventListener('click', function () {
+      audio.play(); // Memulai lagu saat lanjut-btn diklik
+      playPauseBtn2.textContent = '❚❚'; // Ubah teks tombol jadi "Pause"
+    });
+  }
+});
