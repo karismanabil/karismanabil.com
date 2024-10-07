@@ -1,3 +1,31 @@
+// TO BE DELETE
+// button mencar
+document.addEventListener("DOMContentLoaded", function () {
+  
+    const passbtn = document.getElementById('passbtn');
+    const modal2 = document.getElementById('modal2');
+
+
+    if (passbtn) {
+      passbtn.addEventListener('click', function() {
+      const correctPassword = "123456"; // Ganti dengan password yang diinginkan
+    const inputPassword = document.getElementById("passwordInput").value;
+        
+        if (inputPassword === correctPassword) {
+
+          // Menghilangkan modal dan overlay
+          modal2.style.display = "none";
+        } else {
+          alert("Wrong password. Please try again.");
+        }
+      })}
+
+      
+  
+});
+
+
+
 /*=============== SWIPER JS ===============*/
 let swiperCards = new Swiper(".card__content", {
   loop: false,
